@@ -30,7 +30,7 @@ void photo_nikon(int nb){
 
     for(int i=0; i<nb; i++) {
 
-        for (int i = 0; i < 16; i++) {
+        for (int i = 0; i < 76; i++) {
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
             delay_us(5); // 5 -> 7us 
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);

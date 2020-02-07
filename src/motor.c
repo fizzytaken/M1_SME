@@ -3,12 +3,12 @@
 #include "motor.h"
 
 
-void tourne (int speed){
+void tourne (int angle){
     
     int state = 0;
     int i;
-    speed = speed * 593 / 360; //593 => 360 degrés
-    for (i=0; i<7*speed; i++){
+    angle = angle * 593 / 360; //593 => 360 degrés
+    for (i=0; i<7*angle; i++){
         HAL_Delay(1);
         switch (state){
 

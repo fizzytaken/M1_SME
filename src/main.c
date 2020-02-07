@@ -23,12 +23,14 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "shared.h"
 #include "timer.h"
 #include "photo.h"
+#include "motor.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#define NB_Photo 100
+
 /* USER CODE END Includes */
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -95,8 +97,25 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
 
-  photo_canon(1);
+  int photo;  //Initialisation du nombre de photos prises
+  int angle_calcule;
+
+  // FOR DEBUG // 
   photo_nikon(1);
+
+  angle_calcule = (360 / NB_Photo); //Angle de déplacement entre chaque photo, calculé a partir du nombre de photos à prendre
+
+  for(photo=0; photo <= NB_Photo; photo++)
+  {
+    photo_canon(1);
+    photo_nikon(1);
+    
+    tourne(angle_calcule);
+    photo++;
+
+    HAL_Delay(1000);
+  }
+  
   /* USER CODE END 2 */
 
 
@@ -104,12 +123,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE 
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_SET);
-    delay_us(40);
-    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_4, GPIO_PIN_RESET);
-    HAL_Delay(7);*/
-
+    /* USER CODE END WHILE */
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
