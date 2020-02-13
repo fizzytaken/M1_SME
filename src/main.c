@@ -29,7 +29,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define NB_Photo 100
+#define NB_Photo 1
 
 /* USER CODE END Includes */
 /* Private typedef -----------------------------------------------------------*/

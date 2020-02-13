@@ -32,33 +32,33 @@ void photo_nikon(int nb){
 
         for (int i = 0; i < 76; i++) {
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
-            delay_us(5); // 5 -> 7us 
+            delay_us(24); // 5 -> 7us 
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-            delay_us(5);
+            delay_us(24);
         }
-        HAL_Delay(27);
+        HAL_Delay(28);
 
         for (int i = 0; i < 16; i++) {
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
-            delay_us(5);
+            delay_us(24);
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-            delay_us(5);
+            delay_us(24);
         }
         HAL_Delay(1);
 
         for (int i = 0; i < 16; i++) {
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
-            delay_us(5);
+            delay_us(24);
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-            delay_us(5);
+            delay_us(24);
         }
         HAL_Delay(3);
 
         for (int i = 0; i < 16; i++) {
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_SET);
-            delay_us(5);
+            delay_us(24);
             HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-            delay_us(5);
+            delay_us(24);
         }
         
         HAL_Delay(200); // Time entre les salves (quand multiples photos)
