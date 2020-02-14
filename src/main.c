@@ -100,6 +100,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
 
+  init_screen();
   lcd_clear();
   lcd_locate(&hi2c1,0,0);
   lcd_print("...Photo 360... ");
