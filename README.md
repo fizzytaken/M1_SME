@@ -7,7 +7,7 @@ Initial Release
 ✔️ Tester la prise de photo sur Nikon   
 ✔️ Il manque à intégrer une IHM avec un écran
 
-⚪️ Terminer l'assemblage mécanique du moteur sur la plateforme
+⚪️ Terminer l'assemblage mécanique du moteur sur la plateforme  
 ⚪️ Il manque à intégrer une IHM avec un port série  
 
 ❌ Designer/Fabriquer le boitier contenant le uC  
