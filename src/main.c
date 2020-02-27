@@ -27,10 +27,12 @@
 #include "timer.h"
 #include "photo.h"
 #include "motor.h"
+#include "serial.h"
+
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define NB_Photo 1
+#define NB_Photo 200
 
 /* USER CODE END Includes */
 /* Private typedef -----------------------------------------------------------*/
@@ -97,8 +99,11 @@ int main(void)
 MX_I2C1_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim3);
 
+  HAL_TIM_Base_Start_IT(&htim3);
+  __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+  HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART1_IRQn);
   int photo;  //Initialisation du nombre de photos prises
   int angle_calcule;
 
@@ -106,6 +111,9 @@ MX_I2C1_Init();
   photo_nikon(1);
 
   angle_calcule = (360 / NB_Photo); //Angle de déplacement entre chaque photo, calculé a partir du nombre de photos à prendre
+  menu();
+    // ajouter reception bloquante // 
+
 
   for(photo=0; photo <= NB_Photo; photo++)
   {
@@ -114,8 +122,11 @@ MX_I2C1_Init();
     
     tourne(angle_calcule);
     photo++;
+    char buffer[] = "DEBUG -> Photo prise\n";
+    HAL_UART_Transmit(&huart1, (uint8_t *)buffer, sizeof(buffer), HAL_MAX_DELAY);
 
-    HAL_Delay(1000);
+
+    HAL_Delay(500);
   }
   
   /* USER CODE END 2 */
@@ -126,6 +137,9 @@ MX_I2C1_Init();
   while (1)
   {
     /* USER CODE END WHILE */
+  __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+  HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART1_IRQn);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

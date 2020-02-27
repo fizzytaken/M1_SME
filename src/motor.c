@@ -81,5 +81,4 @@ void tourne (int angle){
                 break;
             }
     }
-    return 0;
 }    

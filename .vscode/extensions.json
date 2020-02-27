@@ -1,18 +1,3 @@
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
->>>>>>> Stashed changes
-{
-	// See http://go.microsoft.com/fwlink/?LinkId=827846
-	// for the documentation about the extensions.json format
-	"recommendations": [
-		"platformio.platformio-ide"
-	]
-<<<<<<< Updated upstream
-}
-=======
-}
-=======
 {
     // See http://go.microsoft.com/fwlink/?LinkId=827846
     // for the documentation about the extensions.json format
@@ -20,5 +5,3 @@
         "platformio.platformio-ide"
     ]
 }
->>>>>>> master
->>>>>>> Stashed changes
