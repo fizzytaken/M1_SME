@@ -6,6 +6,7 @@ Initial Release
 ✔️ Intégrer l'algorythme de prise de photos à partir d'un nombre de photos données   
 ✔️ Tester la prise de photo sur Nikon   
 ✔️ Il manque à intégrer une IHM avec un écran
+✔️ Script permettant de compiler les photos en une vidéo
 
 ⚪️ Terminer l'assemblage mécanique du moteur sur la plateforme  
 ⚪️ Il manque à intégrer une IHM avec un port série  
