@@ -123,7 +123,7 @@ int main(void)
     
     tourne(angle_calcule);
 
-    HAL_Delay(1000);
+    HAL_Delay(2000);
   }
 
   lcd_clear();
