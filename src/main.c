@@ -31,7 +31,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define NB_Photo 100
+#define NB_Photo 50
+#define DEBUG 0
 
 /* USER CODE END Includes */
 /* Private typedef -----------------------------------------------------------*/
@@ -113,6 +114,10 @@ int main(void)
 
  
   angle_calcule = (360 / NB_Photo); //Angle de déplacement entre chaque photo, calculé a partir du nombre de photos à prendre
+  while(DEBUG == 1)
+  {
+    tourne(1);
+  }
 
   for(photo=0; photo <= NB_Photo; photo++)
   {
@@ -123,8 +128,8 @@ int main(void)
     
     tourne(angle_calcule);
 
-    HAL_Delay(1000);
-  }
+    HAL_Delay(10000);
+  } 
 
   lcd_clear();
   lcd_locate(&hi2c1,4,0);
