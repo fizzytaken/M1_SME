@@ -123,18 +123,13 @@ int main(void)
   {
     lcd_ihm(photo,NB_Photo);
 
-    photo_canon(1);
-    photo_nikon(1);
+    photo_canon(2);
+    photo_nikon(2);
     
     tourne(angle_calcule);
 
-<<<<<<< HEAD
     HAL_Delay(10000);
   } 
-=======
-    HAL_Delay(2000);
-  }
->>>>>>> 95f0bd898857870bdb514a2da6eeeee6fb2895f0
 
   lcd_clear();
   lcd_locate(&hi2c1,4,0);
