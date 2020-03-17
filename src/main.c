@@ -22,6 +22,7 @@
 #include "main.h"
 #include "tim.h"
 #include "usart.h"
+#include "ihm.h"
 #include "i2c.h"
 #include "gpio.h"
 #include "timer.h"
@@ -31,8 +32,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#define NB_Photo 50
 #define DEBUG 0
+#define IHM 1  // activation ou non de l'IHM au démarrage 
+int IHM_USER_STATUS  = 1;  // activation ou non de l'IHM au démarrage 
+int NB_Photo =  50;
+
+
+uint8_t Data_out[256];
 
 /* USER CODE END Includes */
 /* Private typedef -----------------------------------------------------------*/
@@ -95,15 +101,25 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  
   MX_TIM3_Init();
   MX_I2C1_Init();
   MX_USART1_UART_Init();
+  HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "******  INITIALISATION TIM3  ******  \n"), 500);
+  HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "******  INITIALISATION I2C  ******   \n"), 500);
+  HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "******  INITIALISATION GPIO  ******  \n"), 500);
+
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim3);
+  __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE);
+  HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(USART1_IRQn);
 
   init_screen();
   lcd_clear();
   lcd_locate(&hi2c1,0,0);
+  HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "******  INITIALISATION LCD  ******  \n"), 500);
+
   lcd_print("...Photo 360... ");
   HAL_Delay(5000);
 
@@ -112,17 +128,21 @@ int main(void)
   int photo;  //Initialisation du nombre de photos prises
   int angle_calcule;
 
+   IHM_BEGIN(IHM_USER_STATUS, &NB_Photo);
+
  
   angle_calcule = (360 / NB_Photo); //Angle de déplacement entre chaque photo, calculé a partir du nombre de photos à prendre
   while(DEBUG == 1)
   {
+      HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "******  MODE DEBUG  ****** -->>  37,5 pour 100 \n"), 500);
+
     tourne(1);
   }
 
   for(photo=0; photo <= NB_Photo; photo++)
   {
-    lcd_ihm(photo,NB_Photo);
 
+    lcd_ihm(photo,NB_Photo);
     photo_canon(2);
     photo_nikon(2);
     
@@ -134,6 +154,8 @@ int main(void)
   lcd_clear();
   lcd_locate(&hi2c1,4,0);
 	lcd_print("! DONE !");
+
+  
   
   /* USER CODE END 2 */
 
@@ -142,6 +164,32 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+      IHM_MAIN(IHM_USER_STATUS, &NB_Photo);
+
+    
+    angle_calcule = (360 / NB_Photo); //Angle de déplacement entre chaque photo, calculé a partir du nombre de photos à prendre
+    while(DEBUG == 1)
+    {
+      tourne(1);
+    }
+
+   for(photo=0; photo <= NB_Photo; photo++)
+   {
+
+    lcd_ihm(photo,NB_Photo);
+    photo_canon(2);
+    photo_nikon(2);
+    
+    tourne(angle_calcule);
+
+    HAL_Delay(10000);
+  } 
+
+  lcd_clear();
+  lcd_locate(&hi2c1,4,0);
+	lcd_print("! DONE !");
+
+
   }
   /* USER CODE END 3 */
 }

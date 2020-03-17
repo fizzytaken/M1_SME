@@ -95,6 +95,7 @@ void lcd_print(char *str)
 /* Fonction qui permet de positionner le curseur */
 void lcd_locate(I2C_HandleTypeDef* I2Cx,char col, char row)
 {
+
 	I2C_HandleTypeDef* Handle = I2Cx;
     if(row == 0)
     {
@@ -122,72 +123,108 @@ void lcd_clear()
 
 void lcd_avancement(int value, int ligne)
 {    
+		 uint8_t Data_out[256];
+
 	lcd_locate(&hi2c1,0,ligne);
 
 	switch ( value )
 	{
     case 1:
 		lcd_print("*");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  6,25 pour 100 \n"), 500);
+
         break;
 
 	case 2:
 		lcd_print("**");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  12,5 pour 100 \n"), 500);
+
         break;
 
 	case 3:
 		lcd_print("***");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  18,75 pour 100 \n"), 500);
+
         break;
 
     case 4:
 		lcd_print("****");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  25 pour 100 \n"), 500);
+
         break;
 
     case 5:
 		lcd_print("*****");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  31,25 pour 100 \n"), 500);
+
         break;
 
 	case 6:
 		lcd_print("******");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  37,5 pour 100 \n"), 500);
+
         break;
 
 	case 7:
 		lcd_print("*******");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  43,75 pour 100 \n"), 500);
+
         break;
 
     case 8:
 		lcd_print("********");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  50 pour 100 \n"), 500);
+
         break;
 
 	case 9:
 		lcd_print("*********");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  56,25 pour 100 \n"), 500);
+
         break;
 
     case 10:
 		lcd_print("**********");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  62,5 pour 100 \n"), 500);
+
         break;
 
     case 11:
 		lcd_print("***********");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  68,75 pour 100 \n"), 500);
+
         break;
 
 	case 12:
 		lcd_print("************");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  75 pour 100 \n"), 500);
+
         break;
 
 	case 13:
 		lcd_print("*************");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  81,25 pour 100 \n"), 500);
+
         break;
 
     case 14:
 		lcd_print("**************");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  87,5 pour 100 \n"), 500);
+
         break;
 	
 	case 15:
 		lcd_print("***************");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  93,75 pour 100 \n"), 500);
+
         break;
 
     case 16:
 		lcd_print("****************");
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "AVANCEMENT -->>  100 pour 100 \n"), 500);
+		HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "************ DONE ***************\n"), 500);
+
+
         break;
 
     default:

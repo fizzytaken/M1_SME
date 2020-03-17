@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ihm.h"
 #include "stm32f0xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -162,7 +163,11 @@ void USART1_IRQHandler(void)
   /* USER CODE BEGIN USART1_IRQn 0 */
 
   /* USER CODE END USART1_IRQn 0 */
-  HAL_UART_IRQHandler(&huart1);
+    char buffer_tx[] = "TEST\r\n";
+     char buffer_rx[] = "";
+  //   HAL_UART_Receive(&huart1, (uint8_t *)buffer_rx, sizeof(buffer_rx)+1, 500);
+   //  HAL_UART_Transmit(&huart1, (uint8_t *)buffer_rx, sizeof(buffer_rx), 500);
+    
   /* USER CODE BEGIN USART1_IRQn 1 */
 
   /* USER CODE END USART1_IRQn 1 */

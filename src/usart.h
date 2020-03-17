@@ -25,6 +25,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "ihm.h"
+
 
 /* USER CODE BEGIN Includes */
 

@@ -3,6 +3,7 @@
 
 #include "stm32f0xx_hal.h"
 #include "i2c.h"
+#include "usart.h"
 
 // Device I2C Arress
 #define LCD_ADDRESS     0x7c
