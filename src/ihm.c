@@ -24,10 +24,10 @@ HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "*****
     
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sizeof(Data_int)+1, 500);
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "PLUS LE NOMBRE DE PHOTOS EST IMPORTANT, PLUS LE RENDU SERA PRECIS \n"), 500);
-    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "1) 50 Photos .. \n"), 500);
-    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "2) 100 Photos .. \n"), 500);
-    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "3) 150 Photos .. \n"), 500);
-    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "4) 200 Photos .. \n"), 500);
+    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "1) 25 Photos .. \n"), 500);
+    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "2) 50 Photos .. \n"), 500);
+    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "3) 75 Photos .. \n"), 500);
+    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "4) 100 Photos .. \n"), 500);
 Data_int[0]= 0;
 
  while((Data_int[0] != '1' )&&(Data_int[0] != '2' )&&(Data_int[0] != '3' )&&(Data_int[0] != '4' ) ){
@@ -40,25 +40,25 @@ Data_int[0]= 0;
 
 switch(select){
 case '1':
-    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 20 Photos ACTIF \n"), 500);
-    *nb_photos = 50;
+    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 25 Photos ACTIF \n"), 500);
+    *nb_photos = 25;
       break;
 
     case '2':
-    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 45 Photos ACTIF\n"), 500);
-        *nb_photos = 100;
+    HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 50 Photos ACTIF\n"), 500);
+        *nb_photos = 50;
 
       break;
 
     case '3':
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 75 Photos ACTIF\n"), 500);
-    *nb_photos = 150;
+    *nb_photos = 75;
 
       break;
 
     case '4':
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "4) 100 Photos .. \n"), 500);
-        *nb_photos = 200;
+        *nb_photos = 100;
 
       break;
 
@@ -105,24 +105,24 @@ Data_int[0]= 0;
 switch(select){
 case '1':
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 50 Photos ACTIF \n"), 500);
-    *nb_photos = 50;
+    *nb_photos = 25;
       break;
 
     case '2':
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 100 Photos ACTIF\n"), 500);
-        *nb_photos = 100;
+        *nb_photos = 50;
 
       break;
 
     case '3':
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "MODE 150 Photos ACTIF\n"), 500);
-    *nb_photos = 150;
+    *nb_photos = 75;
 
       break;
 
     case '4':
     HAL_UART_Transmit(&huart1, (uint8_t *)Data_out, sprintf((char *)Data_out, "4) 200 Photos .. \n"), 500);
-        *nb_photos = 200;
+        *nb_photos = 100;
 
       break;
 
