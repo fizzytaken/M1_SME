@@ -1,0 +1,28 @@
+Nous avons réalisé un projet sur la plateforme Notion que vous pouvez retrouvez à l'adresse ci-dessous : 
+
+adresse du Notion: https://www.notion.so/BE-R-alisation-syst-mes-STM32_G25-ea367db8c6124e34a48b9253f805f044
+
+
+
+Sur ce document vous pouvez retrouver et suivre l'évolution de notre projet. 
+
+Ce document contient : 
+
+- Le lien vers notre vidéo de présentation Youtube de notre projet.
+- Le rapport des TPs de bases que nous avons réalisés.
+- Le rapport (en cours d'amélioration) de notre projet qui contiendra une conception structurelle ainsi qu'une 
+décomposition de notre projet sous forme de TPs de Base comme vous le souhaitiez. 
+
+
+Bonne lecture !
+
+
+
+INORMATIONS UTILIES: 
+
+PROMOTION: 			M1 EEA SME
+GROUPE DE PROJET : 		STM32_G25
+
+ETUDIANTS: 			Frédéric JENN ALET		
+				Cyprien QUIVET
+
