@@ -1,0 +1,8 @@
+lcd.c:9:6:lcd_init	48	static
+lcd.c:75:6:lcd_write	24	static
+lcd.c:82:6:lcd_print	32	static
+lcd.c:96:6:lcd_locate	24	static
+lcd.c:115:6:lcd_clear	24	static
+lcd.c:124:6:lcd_avancement	264	static
+lcd.c:235:6:lcd_ihm	48	static
+lcd.c:264:9:init_screen	24	static
