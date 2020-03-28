@@ -4,14 +4,14 @@ adresse du Notion: https://www.notion.so/BE-R-alisation-syst-mes-STM32_G25-ea367
 
 
 
-Sur ce document vous pouvez retrouver et suivre l'évolution de notre projet. 
+Sur ce document vous pouvez retrouver et suivre l'evolution de notre projet. 
 
 Ce document contient : 
 
-- Le lien vers notre vidéo de présentation Youtube de notre projet.
-- Le rapport des TPs de bases que nous avons réalisés.
-- Le rapport (en cours d'amélioration) de notre projet qui contiendra une conception structurelle ainsi qu'une 
-décomposition de notre projet sous forme de TPs de Base comme vous le souhaitiez. 
+- Le lien vers notre video de presentation Youtube de notre projet.
+- Le rapport des TPs de bases que nous avons realises.
+- Le rapport (en cours d'amelioration) de notre projet qui contiendra une conception structurelle ainsi qu'une 
+decomposition de notre projet sous forme de TPs de Base comme vous le souhaitiez. 
 
 
 Bonne lecture !
@@ -23,6 +23,6 @@ INORMATIONS UTILIES:
 PROMOTION: 			M1 EEA SME
 GROUPE DE PROJET : 		STM32_G25
 
-ETUDIANTS: 			Frédéric JENN ALET		
+ETUDIANTS: 			Frederic JENN ALET		
 				Cyprien QUIVET
 
